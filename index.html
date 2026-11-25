@@ -227,7 +227,7 @@
       </div>
 
       <p><p>
-        We introduce <b>UniLARN</b>, a transformer-based Vision–Language–Action model that injects geometric structure into latent action representations. Our method mainly involves three-stage training pipeline. (1) <b>Unified latent action learning(UniLARN)</b>: we use <b>UniLARN</b> to learn modality-specific latent actions from RGB and depth, along with a unified latent space that captures cross-modal interactions. (2) <b>Unified latent pretraining</b>: UniLACT is pretrained to predict these modality-specific and unified latent actions, providing supervision without explicit robot action annotations. (3) <b>Action fine-tuning</b>: UniLACT is then fine-tuned on robot demonstrations to map predicted unified latent actions to executable control policies.
+        We introduce <b>UNILARN</b>, a latent-action pretraining framework that injects geometric structure into action representations via dedicated RGB, depth, and unified RGB–depth supervision. Our method mainly involves a three-stage training pipeline. (1) <b>Unified latent action learning (UNILARN)</b>: we learn modality-specific latent actions from RGB and depth, along with a unified latent space that captures cross-modal interactions. (2) <b>Unified latent pretraining</b>: a VLA is pretrained to predict these modality-specific and unified latent actions, providing supervision without explicit robot action annotations. (3) <b>Action fine-tuning</b>: the pretrained VLA is then fine-tuned on robot demonstrations to map predicted unified latent actions to executable control policies.
       </p></p>
     </div>
   </div>
@@ -411,7 +411,7 @@
               </div>
 
               <!-- <p><p>
-                We evaluate UniLACT on 4 table-top manipulation tasks under both seen and unseen settings. -->
+                We evaluate UNILARN on 4 table-top manipulation tasks under both seen and unseen settings. -->
 
         
             </div>
@@ -502,7 +502,7 @@
             </video>
           </div>
           <div class="column has-text-centered is-6">
-            <h5><b>UniLACT</b></h5>
+            <h5><b>UNILARN</b></h5>
             <h5 style="font-size:30px;">✅</h5>
             <video autoplay controls muted loop playsinline width="50%">
               <source src="static/videos/real/unilact_ex4.mp4" type="video/mp4">
