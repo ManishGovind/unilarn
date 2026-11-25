@@ -227,7 +227,7 @@
       </div>
 
       <p><p>
-        We introduce <b>UniLACT</b>, a transformer-based Vision–Language–Action model that injects geometric structure into latent action representations. Our method mainly involves three-stage training pipeline. (1) <b>Unified latent action learning(UniLARN)</b>: we use <b>UniLARN</b> to learn modality-specific latent actions from RGB and depth, along with a unified latent space that captures cross-modal interactions. (2) <b>Unified latent pretraining</b>: UniLACT is pretrained to predict these modality-specific and unified latent actions, providing supervision without explicit robot action annotations. (3) <b>Action fine-tuning</b>: UniLACT is then fine-tuned on robot demonstrations to map predicted unified latent actions to executable control policies.
+        We introduce <b>UniLARN</b>, a transformer-based Vision–Language–Action model that injects geometric structure into latent action representations. Our method mainly involves three-stage training pipeline. (1) <b>Unified latent action learning(UniLARN)</b>: we use <b>UniLARN</b> to learn modality-specific latent actions from RGB and depth, along with a unified latent space that captures cross-modal interactions. (2) <b>Unified latent pretraining</b>: UniLACT is pretrained to predict these modality-specific and unified latent actions, providing supervision without explicit robot action annotations. (3) <b>Action fine-tuning</b>: UniLACT is then fine-tuned on robot demonstrations to map predicted unified latent actions to executable control policies.
       </p></p>
     </div>
   </div>
@@ -248,8 +248,8 @@
         </figure>
       </div>
       <p>
-        We evaluate <b>UniLACT</b> on the CALVIN simulation benchmark in the unseen D environment and compare it against various language-conditioned action policies.
-        <b>UniLACT</b> consistently outperforms the RGB latent-action method Moto under both in-domain and out-of-domain pretraining settings.
+        We evaluate <b>UNILARN</b> on the CALVIN simulation benchmark in the unseen D environment and compare it against various language-conditioned action policies.
+        <b>UNILARN</b> consistently outperforms the RGB latent-action method Moto under both in-domain and out-of-domain pretraining settings.
         These results highlight the benefit of depth-aware unified latent action representations for precise grasping and manipulation.
       </p>
 
@@ -264,8 +264,8 @@
       <div class="content">
         <figure class="image" style="overflow:hidden; border-radius: 14px;">
           <img
-            src="./static/images/calvin-tasks-graph.png"
-            alt="CALVIN results"
+            src="./static/images/Unified_vs_RGB-calvin.png"
+            alt="Unified vs RGB CALVIN task-wise results"
             style="width: 100%; height: auto; display:block;"
           >
         </figure>
@@ -273,8 +273,8 @@
       <p>
 
         For a better understanding of where depth actually benefits, 
-        we further analyse CALVIN tasks. Moto (RGB latents) and UniLACT (RGB+depth latents) are comparable on appearance-driven tasks (e.g.,open drawer, rotate blue block). 
-        In contrast, UniLACT significantly improve tasks requiring spatial precision (e.g., move the slider, turn on the LED), 
+        we further analyse CALVIN tasks. Moto (RGB latents) and UNILARN (RGB+depth latents) are comparable on appearance-driven tasks (e.g.,open drawer, rotate blue block). 
+        In contrast, UNILARN significantly improve tasks requiring spatial precision (e.g., move the slider, turn on the LED), 
         suggesting depth injects stronger 3D geometric priors into the latent action space.
 
       </p>
@@ -295,7 +295,7 @@
 
       
         <h3 class="title is-4" style="margin-top: 2rem;">
-          Rollout Videos: Moto (RGB Latents) vs. UniLACT (RGB+Depth Latents)
+          Rollout Videos: Moto (RGB Latents) vs. UNILARN (RGB+Depth Latents)
         </h3>
 
         <!-- Example 1 -->
@@ -307,7 +307,7 @@
           </img>
           </div>
           <div class="column has-text-centered is-6">
-            <h5><b>UniLACT</b></h5>
+            <h5><b>UNILARN</b></h5>
             <h5 style="font-size:30px;">✅</h5>
             <img autoplay controls muted loop playsinline width="50%" src="static/videos/4-0-unilact-open_drawer-succ.gif" 
             </img>
@@ -328,7 +328,7 @@
             </img>
           </div>
           <div class="column has-text-centered is-6">
-            <h5><b>UniLACT</b></h5>
+            <h5><b>UNILARN</b></h5>
             <h5 style="font-size:30px;">✅</h5>
             <img autoplay controls muted loop playsinline width="50%"  src="static/videos/23-0-unilact-turn_on_led-succ.gif" >
             </img>
@@ -349,7 +349,7 @@
           </img>
           </div>
           <div class="column has-text-centered is-6">
-            <h5><b>UniLACT</b></h5>
+            <h5><b>UNILARN</b></h5>
             <h5 style="font-size:30px;">✅</h5>
             <img autoplay controls muted loop playsinline width="50%"
               <source src="static/videos/3-2-unilact-place_in_slider-succ.gif" 
@@ -371,7 +371,7 @@
             </img>
           </div>
           <div class="column has-text-centered is-6">
-            <h5><b>UniLACT</b></h5>
+            <h5><b>UNILARN</b></h5>
             <h5 style="font-size:30px;">✅</h5>
             <img autoplay  muted loop playsinline width="50%" src="static/videos/36-1-unilact-turn_off_lightbulb-succ.gif"
           </img>
@@ -420,7 +420,7 @@
           
       
         <h3 class="title is-4" style="margin-top: 2rem;">
-          Rollout Videos: Moto (RGB Latents) vs. UniLACT (RGB+Depth Latents)
+          Rollout Videos: Moto (RGB Latents) vs. UNILARN (RGB+Depth Latents)
         </h3>
 
         <!-- Example 1 -->
@@ -433,7 +433,7 @@
           </video>
           </div>
           <div class="column has-text-centered is-6">
-            <h5><b>UniLACT</b></h5>
+            <h5><b>UNILARN</b></h5>
             <h5 style="font-size:30px;">✅</h5>
             <video autoplay controls muted loop playsinline width="50%">
               <source src="static/videos/unilact_pick_place_success-62x.mp4" type="video/mp4">
@@ -456,7 +456,7 @@
             </video>
           </div>
           <div class="column has-text-centered is-6">
-            <h5><b>UniLACT</b></h5>
+            <h5><b>UNILARN</b></h5>
             <h5 style="font-size:30px;">✅</h5>
             <video autoplay  controls muted loop playsinline width="50%">
               <source src="static/videos/unilact_pick_place_suceess2x.mp4" type="video/mp4">
@@ -479,7 +479,7 @@
             </video>
           </div>
           <div class="column has-text-centered is-6">
-            <h5><b>UniLACT</b></h5>
+            <h5><b>UNILARN</b></h5>
             <h5 style="font-size:30px;">✅</h5>
             <video autoplay controls  muted loop playsinline width="50%">
               <source src="static/videos/unilact_move_near_success2x.mp4" type="video/mp4">
