@@ -179,9 +179,21 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Latent action representations learned from unlabeled videos have recently emerged as a promising paradigm for pretraining vision-language-action(VLA) models without explicit robot action supervision. However, latent actions derived solely from RGB observations primarily encode appearance-driven dynamics and lack explicit 3D geometric structure, which is essential for precise and contact-rich manipulation. 
-            To address this limitation, we introduce UniLACT, a transformer-based VLA model that incorporates geometric structure through depth-aware latent pretraining, enabling downstream policies to inherit stronger spatial priors. To facilitate this process, we propose UniLARN, a unified latent action learning framework based on inverse and forward dynamics objectives that learns a shared embedding space for RGB and depth while explicitly modeling their cross-modal interactions. This formulation produces modality-specific and unified latent action representations that serve as pseudo-labels for the depth-aware pretraining of UniLACT.
-            Extensive experiments in both simulation and real-world settings demonstrate the effectiveness of unified latent action representations. UniLACT consistently outperforms RGB-based latent action baselines under in-domain and out-of-domain pretraining regimes, as well as on both seen and unseen manipulation tasks.
+            Depth provides critical geometric supervision for robot manipulation, yet existing
+            depth-aware policies typically inject it through fused representations or auxiliary
+            objectives, leaving its role in action learning implicit. We introduce UNILARN, a
+            latent-action pretraining framework that explicitly preserves three complementary
+            supervisory targets from RGB-D transitions: RGB-specific, depth-specific, and unified
+            latent actions. RGB and depth transition embeddings are first discretized through a
+            shared codebook, then fused and re-quantized through a separate unified codebook,
+            preserving modality-specific dynamics while modeling their shared action semantics.
+            These three latent-action targets provide separate pseudo-action supervision during
+            VLA pretraining, avoiding both inconsistent independent learning and premature
+            multimodal fusion without requiring robot action labels. The pretrained VLA is
+            subsequently fine-tuned on executable actions and requires only RGB observations and
+            language instructions at inference. Experiments in simulation and the real-world show
+            improvements over RGB-based latent-action pretraining, particularly on
+            geometry-sensitive manipulation tasks.
           </p>
         </div>
       </div>
